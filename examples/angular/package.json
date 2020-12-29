@@ -41,6 +41,7 @@
         "@bazel/buildifier": "^3.5.0",
         "@bazel/concatjs": "^3.0.0",
         "@bazel/ibazel": "^0.14.0",
+        "@bazel/labs": "^3.0.0",
         "@bazel/protractor": "^3.0.0",
         "@bazel/rollup": "^3.0.0",
         "@bazel/terser": "^3.0.0",

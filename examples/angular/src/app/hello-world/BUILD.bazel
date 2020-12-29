@@ -2,6 +2,8 @@ load("@io_bazel_rules_sass//:defs.bzl", "multi_sass_binary")
 load("@npm//@bazel/concatjs:index.bzl", "karma_web_test_suite")
 load("@npm//@bazel/typescript:index.bzl", "ts_library")
 load("//tools:angular_ts_library.bzl", "ng_ts_library")
+load("@rules_proto//proto:defs.bzl", "proto_library")
+load("@npm//@bazel/labs:index.bzl", "ts_proto_library")
 
 package(default_visibility = ["//:__subpackages__"])
 
@@ -12,6 +14,16 @@ multi_sass_binary(
         "hello-world.component.scss",
         "secondary-styles.scss",
     ],
+)
+
+proto_library(
+    name = "thing_type",
+    srcs = ["thing.proto"],
+)
+
+ts_proto_library(
+    name = "thing_type_ts",
+    proto = ":thing_type",
 )
 
 ng_ts_library(
